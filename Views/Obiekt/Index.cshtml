@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Zaliczenie.Models.ObiektSportowy>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+@using (Html.BeginForm())
+{
+    
+    <nav class="navbar navbar-inverse navbar-fixed-top" style="margin-top:50px">
+        <div style="background-color:gray;text-align:center;height:50px">
+          
+            <form action="/action_page.php" method="get">
+                <input type="checkbox" name="DanyTyp" value="Team"onclick="this.form.submit()">Zespołowe
+                <input type="checkbox" name="DanyTyp" value="Ball"onclick="this.form.submit()">Piłka
+                <input type="checkbox" name="DanyTyp" value="Football"onclick="this.form.submit()">Piłka Nożna
+                <input type="checkbox" name="DanyTyp" value="Basketball"onclick="this.form.submit()">Koszykówka
+                <input type="checkbox" name="DanyTyp" value="IceSkate"onclick="this.form.submit()">Łyżwy
+                <input type="checkbox" name="DanyTyp" value="Paintball" onclick="this.form.submit()">Paintball<br>
+            </form>
+        </div>
+    </nav>
+}
+
+
+<div class="container" style="width:100%;display:inline-block;margin:0px;padding:0px;text-align:left;margin-top:40px">
+
+    @foreach (var item in Model)
+    {
+        <div class="col-lg-11">
+            <a class="btn btn-default" style="background-color:transparent; border:none;" asp-action="About">
+                <img src="@Html.DisplayFor(modelItem => item.Img)" style="overflow:hidden;padding:0px;width:400px;height:260px;border:5px;border-color:white;border-style:solid" />
+            </a>
+            <v-list-item-title>@Html.DisplayFor(modelItem => item.Name)</v-list-item-title>
+            <v-list-item-subtitle>@Html.DisplayFor(modelItem => item.Description)</v-list-item-subtitle>
+            <div class="col-lg-2" style="float:right;text-align:center;bottom:-110px;">
+                <div>
+                    <a asp-action="Edit" asp-route-id="@item.Name">Rezerwuj</a>
+                    <p></p>
+                    <a asp-action="Details" asp-route-id="@item.Name">Więcej</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+    }

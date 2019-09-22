@@ -1,0 +1,19 @@
+﻿@model Zaliczenie.Models.ObiektSportowy
+
+@{
+    ViewData["Title"] = "Details";
+}
+<div>
+    <h2 style="text-align:center">@Html.DisplayFor(model => model.Name)</h2>
+    <div class="col-lg-11">
+        <a class="btn btn-default" style="background-color:transparent; border:none;" asp-action="About">
+            <img src="@Html.DisplayFor(modelItem => Model.Img)" style="overflow:hidden;padding:0px;width:400px;height:260px;border:5px;border-color:white;border-style:solid" />
+        </a>
+        <v-list-item-subtitle>@Html.DisplayFor(modelItem => Model.Description)</v-list-item-subtitle>
+        <div class="col-lg-2" style="float:right;text-align:center;bottom:-110px;">
+            <div style="background-color:darkgray">
+                <a asp-action="Edit" asp-route-id="@Model.Name">Rezerwuj</a>
+        </div>
+    </div>
+        </div>
+</div>

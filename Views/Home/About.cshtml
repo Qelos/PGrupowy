@@ -1,0 +1,69 @@
+﻿@model Zaliczenie.Models.Ekstraklasa
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@*<form action="https://www.w3docs.com/">
+    <button type="submit">Click me</button>
+</form>
+    asp-action="@item.Name"
+https://localhost:44368/Obiekt/Details/*@
+
+<body style="background-image:url(https://i.pinimg.com/originals/b5/78/8c/b5788c2512ad00b69d2370849550eb6c.png);text-align:left; background-repeat:no-repeat; background-size:cover;margin:0px;width:100%">
+    <div style="width:100%; background-color:gray;text-align:center;height:650px;margin-left:0px;margin-right:0px;margin-top:45px;margin-bottom:50px">
+        <h1 style="font-style:italic;color:white;text-shadow:-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000">Najnowsze obiekty</h1>
+        <hr style="color:white;width:50%" />
+        <div class="container" style="width:100%;display:inline-block;margin:0px;padding:0px;text-align:right;margin-top:15px">
+            @foreach (var item in Model.List_A)
+            {
+                <div class="col-md-3" style="background-color:transparent;padding:0px;text-align:center;display:block;margin-top:-4px">
+                    <form action="https://localhost:44368/Obiekt/Details/@item.Name">
+                        <button style="background-color:transparent; border:none;">
+                            <img src="@Html.DisplayFor(modelItem => item.Img)" style="overflow:hidden;padding:0px;width:400px;height:260px;border:5px;border-color:white;border-style:solid" />
+                            <div class="carousel-caption d-none d-md-block popup" style="text-align:center">
+                                <div class="fixed-bottom" style="width:auto;height:auto;word-wrap:normal;font-size:18px;text-shadow:-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;">@Html.DisplayFor(modelItem => item.Name)</div>
+                            </div>
+                        </button>
+                    </form>
+                </div>
+            }
+        </div>
+    </div>
+    <div style="width:100%; background-color:gray;text-align:center;height:400px;margin-left:0px;margin-right:0px;margin-top:200px;margin-bottom:50px">
+        <h1 style="font-style:italic;color:white;text-shadow:-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000">Popularne dyscypliny</h1>
+        <hr style="color:white;width:50%" />
+        <div class="container" style="width:100%;display:inline-block;margin:0px;padding:0px;text-align:right;margin-top:15px">
+            @foreach (var item in Model.List_C)
+            {
+                <div class="col-md-3" style="background-color:transparent;padding:0px;text-align:center;display:block;margin-top:-4px">
+                    <a class="btn btn-default" style="background-color:transparent; border:none;" asp-action="@item.Name">
+                        <img src="@Html.DisplayFor(modelItem => item.Img)" style="overflow:hidden;padding:0px;width:400px;height:260px;border:5px;border-color:white;border-style:solid" />
+                        <div class="carousel-caption d-none d-md-block popup" style="text-align:center">
+                            <div class="fixed-bottom" style="width:auto;height:auto;word-wrap:normal;font-size:18px;text-shadow:-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;">@Html.DisplayFor(modelItem => item.Name)</div>
+                        </div>
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+    <p style="clear:both;"></p>
+</body>
+
+@*<table class="table" style="text-align:center; float:right;">
+        <tbody>
+            @foreach (var item in Model.List_B)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Gospodarz)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Data)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Gość)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>*@

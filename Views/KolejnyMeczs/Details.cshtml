@@ -1,0 +1,36 @@
+﻿@model Zaliczenie.Models.KolejnyMecz
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>KolejnyMecz</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Gospodarz)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Gospodarz)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Data)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Data)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Gość)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Gość)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Gospodarz">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
